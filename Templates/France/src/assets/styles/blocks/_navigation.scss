@@ -1,0 +1,24 @@
+.navigation {
+  @apply flex justify-end mb-2.5;
+
+  &__swiper {
+    @apply mr-0 #{!important};
+  }
+
+  &__link {
+    @apply inline-block px-4 py-2.5;
+
+    &-active {
+      @apply font-medium border-b border-main_black;
+    }
+  }
+
+  &__text {
+    @apply body-lg;
+  }
+
+  .swiper-slide {
+    display: inline-block !important;
+    width: auto !important;
+  }
+}

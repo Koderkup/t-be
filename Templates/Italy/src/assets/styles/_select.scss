@@ -1,0 +1,37 @@
+.select {
+  &__option {
+    @apply flex mt-4 flex-col gap-2 items-start w-full  pb-6 border-b border-solid border-[#e2e8f0];
+
+    &__colorBlock {
+      @apply flex items-center gap-2;
+    }
+
+    &__wraperr {
+      @apply flex items-center gap-[6px];
+    }
+
+    &--color {
+      @apply w-[46px] h-[46px] flex justify-center items-center rounded-[90px] #{!important};
+    }
+
+    &--circle {
+      @apply w-[38px] h-[38px] rounded-[22px] #{!important};
+    }
+
+    &--label {
+      @apply text-[13px] font-semibold text-black_50 uppercase leading-[150%] tracking-[0.12em];
+    }
+
+    &--active_color {
+      @apply border-[1.50px] border-solid border-black;
+    }
+  }
+}
+
+.select__option__title {
+  @apply font-inter text-[16px] font-normal  leading-[175%] tracking-[-0.01em] text-black #{!important};
+}
+
+.select__option__colorName {
+  @apply font-inter  text-[16px] font-medium leading-[175%] tracking-[-0.01em] text-black #{!important};
+}

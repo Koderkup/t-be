@@ -1,0 +1,7 @@
+.products-grid {
+  @apply flex flex-wrap gap-y-4 gap-x-2.5 pt-4;
+
+  &--multiple {
+    @apply gap-px;
+  }
+}

@@ -1,0 +1,27 @@
+.input {
+  @apply px-4 py-3 rounded-xl bg-white border border-solid outline-none font-normal leading-[140%] tracking-[0.01em] text-[16px] text-black_100 placeholder:font-primary;
+
+  &__default {
+    @apply border-grey_100;
+  }
+
+  &__active {
+    @apply border-black;
+  }
+
+  &__error {
+    @apply bg-[#fff7f7] border-error;
+
+    &--text {
+      @apply body-sm text-error;
+    }
+  }
+
+  &__valid {
+    @apply absolute top-[16px];
+  }
+
+  &__full {
+    @apply w-full;
+  }
+}

@@ -1,0 +1,23 @@
+.error-boundary {
+  @apply flex flex-col items-center w-full h-screen;
+
+  &__wrapper {
+    @apply flex flex-col items-center justify-center max-w-[250px] flex-grow;
+  }
+
+  &__title {
+    @apply font-medium headline-2xl text-[36px] mt-3 normal-case #{!important};
+  }
+
+  &__subtitle {
+    @apply text-center body-sm;
+  }
+
+  &__actions {
+    @apply relative w-full px-4 pt-2 bg-[rgb(255,255,255,0.75)] backdrop-blur-[20px] border-t-[0.33px] border-cartActions;
+  }
+
+  &__button {
+    @apply font-semibold font-primary headline-sm text-white;
+  }
+}

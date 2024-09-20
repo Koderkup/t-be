@@ -1,0 +1,15 @@
+.category-page {
+  @apply px-4 pt-1 pb-6;
+
+  &__heading {
+    @apply flex flex-col gap-[5px];
+
+    &--name {
+      @apply text-[56px] text-end font-medium headline-2xl;
+    }
+
+    &--description {
+      @apply body-sm;
+    }
+  }
+}

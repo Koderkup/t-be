@@ -1,0 +1,12 @@
+node_modules
+dist
+.vscode
+.github
+Templates
+test
+README.md
+env.example
+env.docker
+docker-compose.dev.yml
+.prettierrc
+.gitignore

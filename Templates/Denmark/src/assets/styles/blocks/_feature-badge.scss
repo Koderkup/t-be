@@ -1,0 +1,11 @@
+.badge {
+  @apply absolute bottom-0 w-full left-0 flex justify-center py-[15px]  bg-[rgba(247,247,245,0.9)];
+
+  &__text {
+    @apply badge-text;
+  }
+}
+
+.badge-double {
+  @apply py-2 #{!important};
+}

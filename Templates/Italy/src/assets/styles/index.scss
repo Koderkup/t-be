@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'pallete';
+@import 'fonts';
+@import 'typography';
+@import 'animations';
+@import 'select';
+@import 'select-size';
+@import 'select-app-currency';
+@import 'blocks/index';
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--white);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-fixed {
+  overflow: hidden;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(24, 26, 28, 0.2);
+  border-radius: 6px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.icon-button {
+  @apply w-10 h-10 flex justify-center items-center;
+}
+
+.select__option-main {
+  justify-content: start !important;
+  flex-direction: row !important;
+}
+
+.select__option-main div {
+  gap: 6px !important;
+}
+
+.promo__wrapper {
+  width: 100%;
+}
+
+.info_wrapper {
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.info_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  align-items: center;
+  gap: 8px;
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 4px;
+  opacity: 1;
+  display: block;
+}
+
+.swiper-pagination-bullet-active {
+  width: 8px;
+  height: 8px;
+  display: block;
+  border-radius: 4px;
+  background: #000;
+  border: 1px solid transparent;
+}

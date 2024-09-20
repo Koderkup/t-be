@@ -1,0 +1,28 @@
+.navigation {
+  @apply flex justify-end;
+
+  &__swiper {
+    @apply mr-0 #{!important};
+  }
+
+  &__link {
+    @apply inline-block rounded-[9999px] text-[#000] bg-[#f1f5f9] py-4 px-6;
+
+    &-active {
+      @apply bg-[#000] text-[#fff]  #{!important};
+    }
+  }
+
+  &__text {
+    @apply font-primary text-[16px] font-medium leading-[150%] tracking-[-0.01em];
+  }
+
+  .swiper-slide {
+    display: inline-block !important;
+    width: auto !important;
+  }
+
+  .swiper-wrapper {
+    gap: 12px !important;
+  }
+}

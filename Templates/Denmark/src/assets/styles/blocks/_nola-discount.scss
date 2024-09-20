@@ -1,0 +1,19 @@
+.nola__cost {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.nola_price_unactive {
+  text-decoration: line-through;
+  color: #a3a3a0 !important;
+}
+
+.nola_discount {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 150%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2d2d2d;
+}

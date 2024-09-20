@@ -1,0 +1,63 @@
+.footer {
+  @apply px-4 pt-[30px] pb-10 bg-main_black;
+
+  &__typo {
+    @apply body-lg text-white;
+  }
+
+  &__promo-title {
+    @apply headline-2xl text-[28px] whitespace-break-spaces text-white;
+  }
+
+  &__promo-url {
+    @apply inline-block mt-3 text-white pb-1 border-b;
+  }
+
+  &__arrow {
+    @apply fill-white w-5 h-5 inline-block ml-1;
+  }
+
+  &__promo-text {
+    @apply headline-xl text-white;
+  }
+
+  .subscribe {
+    @apply flex gap-2.5 py-4 mt-[22px];
+
+    &__media {
+      @apply w-[155px] h-[176px] flex-[1_0_155px];
+
+      img {
+        @apply w-full h-full object-cover max-w-full;
+      }
+    }
+
+    &__wrapper {
+      @apply flex flex-col justify-between gap-3 w-full;
+    }
+
+    &__text {
+      @apply flex flex-col gap-3;
+
+      &__title {
+        @apply headline-2xl text-white text-[28px] whitespace-break-spaces;
+      }
+
+      &__description {
+        @apply body-sm text-white whitespace-break-spaces;
+      }
+    }
+
+    &__button {
+      @apply rounded-[39px] w-full;
+
+      &__button-link {
+        @apply flex w-full h-full items-center justify-center;
+      }
+
+      &__button-text {
+        @apply caption font-medium;
+      }
+    }
+  }
+}

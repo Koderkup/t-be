@@ -1,0 +1,59 @@
+.profile-information {
+  @apply px-4;
+
+  .form {
+    @apply flex flex-col h-screen justify-between gap-y-4;
+
+    &__block {
+      @apply flex flex-col gap-y-4;
+
+      .customer-info {
+        @apply flex flex-col gap-y-2;
+
+        &__title-block {
+          @apply py-2.5;
+
+          &__title {
+            @apply font-normal text-main_black headline-md;
+          }
+        }
+
+        &__fields {
+          @apply flex flex-col gap-y-4;
+
+          .text-field__default:disabled {
+            @apply disabled:bg-white #{!important};
+          }
+        }
+      }
+
+      .select-block {
+        @apply flex flex-col gap-y-2;
+
+        &__name {
+          @apply text-[14px] font-normal leading-[145%] text-[#575a65];
+        }
+
+        &__input {
+          @apply relative;
+
+          &-icon {
+            @apply absolute right-[13px] top-[13px];
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      @apply py-2.5;
+
+      &__button {
+        @apply border border-solid border-black rounded-xl py-[14px] w-full;
+
+        &__button-text {
+          @apply font-semibold text-main_black caption;
+        }
+      }
+    }
+  }
+}

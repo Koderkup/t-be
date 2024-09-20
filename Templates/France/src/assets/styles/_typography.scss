@@ -1,0 +1,47 @@
+.headline-2xl {
+  @apply text-[40px] leading-[98%] uppercase;
+}
+
+.headline-xl {
+  @apply text-xl leading-[98%] uppercase;
+}
+
+.headline-lg {
+  letter-spacing: -0.01em;
+  @apply text-2xl;
+}
+
+.headline-md {
+  letter-spacing: -0.02em;
+  @apply text-xl;
+}
+
+.headline-sm {
+  letter-spacing: -0.02em;
+  @apply text-lg leading-[122%];
+}
+
+.caption {
+  letter-spacing: -0.03em;
+  @apply text-[17px] leading-[129%] text-center;
+}
+
+.body-lg {
+  letter-spacing: -0.02em;
+  @apply text-base leading-[137%];
+}
+
+.body-sm {
+  letter-spacing: -0.02em;
+  @apply text-sm leading-[114%];
+}
+
+.footnote {
+  letter-spacing: -0.03em;
+  @apply text-xs leading-[183%];
+}
+
+.body-xs {
+  letter-spacing: 0.01em;
+  @apply text-[11px] leading-[118%] text-center;
+}

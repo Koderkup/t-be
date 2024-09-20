@@ -1,0 +1,23 @@
+.price-details {
+  @apply flex items-center py-2 justify-between;
+
+  &--is-total {
+    @apply py-2;
+  }
+
+  &__label {
+    @apply font-inter  font-normal text-[18px] tracking-[-0.01em] leading-[178%] text-[#64748b];
+
+    &--is-total {
+      @apply font-inter font-semibold text-[18px] tracking-[0.07em] leading-[133%] text-[#181a1c];
+    }
+  }
+
+  &__price {
+    @apply font-inter  font-normal text-[18px] tracking-[-0.01em] leading-[178%] text-[#64748b];
+
+    &--is-total {
+      @apply font-inter font-semibold text-[18px] tracking-[0.07em] leading-[133%] text-[#181a1c];
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.category-page {
+  @apply px-4 pt-4 pb-6;
+
+  &__heading {
+    @apply flex flex-col gap-y-2;
+
+    &--name {
+      @apply font-primary text-[56px] text-start leading-[114%] tracking-[-0.01em] font-bold text-black;
+    }
+
+    &--description {
+      @apply font-inter  text-[16px] font-normal leading-[175%] tracking-[-0.01em] text-[#64748b];
+    }
+  }
+}

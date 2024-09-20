@@ -1,0 +1,22 @@
+.promo-block {
+  &__wrapper {
+    @apply flex  relative rounded-[16px] justify-end pb-[49px]  flex-col gap-[14px] items-start bg-cover bg-center bg-no-repeat w-screen h-screen;
+  }
+
+  &__text {
+    @apply font-third relative z-[2] font-bold text-[56px] pl-6 leading-[114%] tracking-[-0.01em] text-white;
+  }
+}
+
+.promo {
+  @apply px-4 flex;
+}
+
+.promo-block__media {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+  bottom: 0;
+  border-radius: 16px;
+}

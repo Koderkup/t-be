@@ -1,0 +1,39 @@
+.amount-controller {
+    @apply flex items-center;
+
+  &__remove {
+    @apply opacity-40 fill-main_black;
+
+    &--white {
+        @apply fill-white #{!important};
+    }
+  }
+
+  &__quantity {
+    @apply flex items-center flex-col;
+  }
+
+  &__text {
+    @apply  body-lg leading-6;
+
+    &--white {
+        @apply text-white #{!important};
+    }
+
+    &--black {
+        @apply text-main_black #{!important};
+    }
+  }
+
+  &__footnote {
+    @apply opacity-60 text-[10px] font-primary leading-3 text-white;
+  }
+
+  &__add {
+    @apply opacity-40 fill-main_black;
+
+    &--white {
+        @apply fill-white #{!important};
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.order-details {
+  @apply px-4 mt-[10px] mb-[10px];
+
+  &__number {
+    @apply title-text;
+  }
+
+  .info {
+    @apply flex flex-col gap-2 mt-2;
+
+    &__row {
+      @apply font-inter  text-[#747677] font-normal text-[16px] leading-[175%] tracking-[-0.01em];
+    }
+
+    &__value {
+      @apply font-inter  text-[#181a1c] font-semibold text-[16px] leading-[125%] tracking-[0.08em] pl-[4px];
+    }
+
+    &__wrapper {
+      @apply flex items-center gap-1;
+    }
+
+    &__status {
+      @apply body-sm text-[#747677] font-normal;
+    }
+
+    &__items {
+      @apply mt-2 border-b border-solid border-[#e2e8f0];
+    }
+
+    &__total {
+      @apply pt-2 flex flex-col gap-y-2;
+    }
+  }
+
+  .help-link {
+    @apply mt-6;
+
+    &__button {
+      @apply border border-solid border-black py-[14px] w-full rounded-full;
+    }
+
+    &__text {
+      @apply font-primary font-medium text-[18px] text-black leading-[133%] tracking-[-0.01em];
+    }
+  }
+}
+
+.order-details .info__items .order-item-card:last-child {
+  border: none !important;
+}

@@ -1,0 +1,57 @@
+.card {
+  @apply flex gap-1.5 relative;
+
+  &--full {
+    @apply flex-col w-full;
+  }
+
+  &--column {
+    @apply flex-col w-[calc(50%-6px)] row-span-1;
+  }
+
+  &--small {
+    @apply w-[calc(25%-1px)];
+  }
+
+
+  &__image {
+    @apply object-top object-cover;
+
+    &--full {
+      @apply h-[500px] w-full;
+    }
+
+    &--column {
+      @apply h-[206px] w-full;
+    }
+
+    &--small {
+      @apply h-[111px] w-full;
+    }
+  }
+
+
+  &__info {
+    @apply flex gap-1.5 flex-col gap-y-0.5;
+  }
+
+  &__name {
+    @apply flex flex-col gap-x-1 font-primary;
+  }
+
+  &__text {
+    @apply footnote leading-4;
+  }
+
+  &__cost {
+    @apply flex gap-2;
+  }
+
+  &__price {
+    @apply footnote whitespace-nowrap leading-4;
+  }
+
+  &__discount {
+    @apply footnote line-through leading-4 text-black_60;
+  }
+}

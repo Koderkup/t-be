@@ -1,0 +1,79 @@
+.cart {
+  @apply flex flex-col h-full justify-between overflow-hidden;
+
+  &__wrapper {
+    @apply flex flex-col px-4 overflow-hidden;
+  }
+
+  &__title {
+    @apply block py-2.5 headline-md;
+  }
+
+  &__items {
+    @apply overflow-auto h-full hide-scrollbar;
+  }
+}
+
+.cart-item {
+  @apply py-4 flex gap-3 border-b border-[rgba(24,26,28,0.2)];
+
+  &__left-side {
+    @apply w-[100px] h-[120px] flex-shrink-0;
+  }
+
+  &__image {
+    @apply w-full h-full object-cover object-top;
+  }
+
+  &__right-side {
+    @apply flex flex-col w-full gap-px;
+  }
+
+  &__name {
+    @apply headline-sm;
+  }
+
+  &__wrapper {
+    @apply flex gap-2 mt-[3px] items-center;
+  }
+
+  &__inner {
+    @apply flex items-center gap-1.5;
+  }
+
+  &__info {
+    @apply flex items-center justify-center;
+
+    &--bordered {
+      @apply border;
+    }
+  }
+
+  &__color {
+    @apply leading-3 footnote;
+  }
+
+  &__divider {
+    @apply text-[rgba(24,26,28,0.6)];
+  }
+
+  &__size {
+    @apply footnote;
+  }
+
+  &__price {
+    @apply flex items-center gap-2 w-full justify-between;
+
+    &--text {
+      @apply body-lg;
+    }
+  }
+
+  &__remove {
+    @apply py-1 px-4;
+
+    &--text {
+      @apply opacity-60 footnote;
+    }
+  }
+}

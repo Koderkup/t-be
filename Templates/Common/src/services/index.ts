@@ -1,0 +1,9 @@
+export { default as PromoService } from './promo.service';
+export { default as CategoryService } from './category.service';
+export { default as ProductService } from './product.service';
+export { default as AdBlockService } from './ad-block.service';
+export { default as OrderService } from './order.service';
+export { default as AppConfigurationService } from './app-configuration.service';
+export { default as PromoCodeService } from './promo-code.service';
+export { default as CustomersService } from './customers.service';
+export { default as ShopService } from './shop.service';

@@ -1,0 +1,63 @@
+.order-item-card {
+  @apply flex gap-3;
+
+  &__left-side {
+    @apply flex-shrink-0;
+
+    &--history {
+      @apply w-[60px] h-[72px];
+    }
+
+    &--details {
+      @apply w-[100px] h-[120px]
+    }
+
+    &--image {
+      @apply w-full h-full object-cover object-top;
+    }
+  }
+
+  &__right-side {
+    @apply flex flex-col w-full gap-px;
+
+    &--details {
+      @apply justify-between;
+    }
+
+    .info {
+      @apply flex flex-col gap-[3px];
+
+      &__name {
+        @apply font-normal text-main_black body-lg;
+      }
+
+      &__wrapper {
+        @apply flex gap-2 items-center;
+      }
+
+      &__inner {
+        @apply flex items-center gap-1.5;
+      }
+
+      &__color {
+        @apply flex items-center justify-center;
+
+        &--dot {
+          @apply h-2 w-2 rounded-full;
+        }
+
+        &--name {
+          @apply leading-3 font-normal footnote text-main_black;
+        }
+      }
+
+      &__text {
+        @apply font-normal text-main_black footnote;
+      }
+
+      &__prices {
+        @apply font-normal mt-[3px] text-main_black body-lg;
+      }
+    }
+  }
+}

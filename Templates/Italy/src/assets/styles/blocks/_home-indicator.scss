@@ -1,0 +1,7 @@
+.indicator {
+    @apply w-full pt-[21px] pb-2;
+
+  &__inner {
+    @apply flex bg-black rounded-sm w-[140px] h-[5px] mx-auto;
+  }
+}

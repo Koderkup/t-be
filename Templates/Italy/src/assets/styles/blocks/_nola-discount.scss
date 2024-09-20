@@ -1,0 +1,19 @@
+.nola__cost {
+  display: flex;
+  gap: 14px;
+  justify-content: start;
+}
+
+.nola_price_unactive {
+  text-decoration: line-through;
+  color: #a3a3a0 !important;
+}
+
+.nola_discount {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  color: #000;
+}

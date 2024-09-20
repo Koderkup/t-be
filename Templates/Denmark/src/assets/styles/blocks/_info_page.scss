@@ -1,0 +1,71 @@
+.info-page {
+  @apply px-4 mt-[10px] flex flex-col justify-between h-screen gap-[20px];
+
+  &__title {
+    @apply font-normal py-[10px] text-[18px] tracking-[0.06em] leading-[150%] text-[#181a1c];
+  }
+
+  .contact-info {
+    @apply mt-2 flex flex-col gap-2;
+
+    &__button {
+      @apply flex items-center gap-[10px] underline underline-offset-4 text-blue font-normal;
+    }
+
+    &__location {
+      @apply font-normal body-sm text-blue;
+    }
+
+    &__row {
+      @apply flex items-center gap-[10px] underline underline-offset-4 text-blue font-normal;
+    }
+
+    &__value {
+      @apply font-normal body-sm text-blue;
+    }
+  }
+
+  .help-form {
+    @apply mt-6;
+
+    &__title {
+      @apply font-normal py-[10px] text-[18px] tracking-[0.06em] leading-[150%] text-[#181a1c];
+    }
+
+    &__form {
+      @apply mt-2 flex flex-col gap-[70px];
+    }
+
+    &__wrapper {
+      @apply flex flex-col gap-4 mt-2;
+    }
+
+    &__textarea {
+      @apply resize-none overflow-hidden;
+    }
+  }
+}
+
+.actions {
+  @apply flex flex-col gap-3;
+
+  &__submit {
+    @apply border border-solid border-black_90 py-[12px] w-full;
+  }
+
+  &__text {
+    @apply font-semibold text-[14px] text-black_90 uppercase leading-[200%] tracking-[0.11em];
+  }
+
+  &__info {
+    @apply text-center;
+  }
+
+  &__link {
+    @apply underline underline-offset-4 text-blue;
+
+    &--text {
+      @apply font-normal body-sm text-blue;
+    }
+  }
+}

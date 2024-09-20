@@ -1,0 +1,67 @@
+.order-item-card {
+  @apply flex gap-3 py-4 border-b border-solid border-[#e2e8f0];
+
+  &__left-side {
+    @apply flex-shrink-0;
+
+    &--history {
+      @apply w-[73px] h-[78px];
+    }
+
+    &--details {
+      @apply w-[100px] h-[128px];
+    }
+
+    &--image {
+      @apply w-full h-full object-cover object-top rounded-[16px];
+    }
+  }
+
+  &__right-side {
+    @apply flex flex-col w-full gap-px;
+
+    &--details {
+      @apply justify-between;
+    }
+
+    .info {
+      @apply flex flex-col gap-3;
+
+      &__name {
+        @apply font-inter  font-semibold text-[16px] leading-[125%] tracking-[0.08em] text-black;
+      }
+
+      &__wrapper {
+        @apply flex gap-[6px] items-center;
+      }
+
+      &__inner {
+        @apply flex items-center gap-1.5;
+      }
+
+      &__color {
+        @apply flex items-center justify-center;
+
+        &--dot {
+          @apply h-2 w-2 rounded-full;
+        }
+
+        &--name {
+          @apply font-normal text-[12px] leading-[183%] tracking-[-0.03em] text-black;
+        }
+      }
+
+      &__text {
+        @apply font-normal text-[12px] leading-[183%] tracking-[-0.03em] text-black;
+
+        &__size {
+          @apply hidden;
+        }
+      }
+
+      &__prices {
+        @apply /* font-inter */ font-normal mt-[3px] text-[16px] leading-[175%] tracking-[-0.01em] text-black;
+      }
+    }
+  }
+}

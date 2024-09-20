@@ -1,0 +1,13 @@
+.controls {
+  &__tabs {
+    @apply flex w-full justify-end gap-1.5;
+  }
+
+  &__item {
+    @apply p-[11px];
+  }
+}
+
+.controls__tabs .controls__item-active svg {
+  fill: #2d2d2d;
+}

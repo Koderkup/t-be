@@ -1,0 +1,39 @@
+.amount-controller {
+  @apply flex items-center;
+
+  &__remove {
+    @apply opacity-[1] fill-[#747677];
+
+    &--white {
+      @apply fill-[#747677] #{!important};
+    }
+  }
+
+  &__quantity {
+    @apply flex items-center flex-col;
+  }
+
+  &__text {
+    @apply body-sm font-normal text-black_90;
+
+    &--white {
+      @apply text-black_90 #{!important};
+    }
+
+    &--black {
+      @apply text-black_90 #{!important};
+    }
+  }
+
+  &__footnote {
+    @apply body-sm font-normal text-black_90;
+  }
+
+  &__add {
+    @apply opacity-[1] fill-[#747677];
+
+    &--white {
+      @apply fill-[#747677] #{!important};
+    }
+  }
+}

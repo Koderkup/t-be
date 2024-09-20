@@ -1,0 +1,147 @@
+.action-sheet {
+  @apply fixed left-0 top-0 right-0 bottom-0 bg-white z-[100];
+
+  .cart {
+    @apply flex flex-col h-full justify-between overflow-hidden;
+
+    &__button {
+      @apply relative pt-2 px-4 bg-[rgb(255,255,255,0.75)] backdrop-blur-[20px] border-t-[0.33px] border-cartActions;
+    }
+
+    &__text {
+      @apply font-primary caption text-white;
+    }
+
+    .promo-code-form {
+      @apply relative flex items-start gap-[14px] py-2 border-t border-solid border-[#e2e8f0];
+
+      &__value {
+        @apply opacity-0 invisible absolute font-normal leading-[140%] tracking-[0.01em] text-[16px];
+      }
+
+      &__button {
+        @apply bg-black rounded-full py-4 px-6 font-primary font-medium text-[18px] leading-[133%] tracking-[-0.01em] text-white;
+      }
+
+      &__text {
+        @apply font-primary font-medium text-[18px] leading-[133%] tracking-[-0.01em] text-white;
+      }
+    }
+
+    .discount {
+      @apply flex justify-between py-[14px];
+
+      &__text {
+        @apply text-black_60 caption;
+      }
+
+      &__price {
+        @apply font-normal text-black_100 caption;
+      }
+    }
+
+    .total {
+      @apply flex flex-col gap-y-2;
+
+      &__wrapper {
+        @apply flex items-center justify-between;
+      }
+
+      &__title {
+        @apply font-inter font-normal text-[18px] leading-[178%] tracking-[-0.01em] text-[#64748b];
+      }
+
+      &__text {
+        @apply font-inter text-[18px] leading-[133%] tracking-[0.07em] font-semibold text-[#181a1c];
+      }
+    }
+  }
+
+  .payment {
+    @apply flex flex-col h-full;
+
+    &__wrapper {
+      @apply flex flex-col gap-2 flex-grow px-4;
+    }
+
+    &__title {
+      @apply block py-2.5 font-normal text-[24px] leading-[167%] tracking-[-0.02em] text-[#181a1c];
+    }
+
+    &__wallet {
+      @apply w-full [&_div]:w-full [&_button]:w-full #{!important};
+    }
+
+    &__actions {
+      @apply relative pt-2 px-4 bg-[rgb(255,255,255,0.75)] backdrop-blur-[20px];
+    }
+
+    &__text {
+      @apply font-primary font-medium text-[18px] leading-[133%] tracking-[-0.01em] text-white;
+    }
+
+    &__item {
+      @apply flex items-center gap-4 px-4 py-3 rounded-[24px] bg-[#f8fafc];
+    }
+
+    &__icon {
+      @apply flex items-center gap-4 flex-grow font-normal text-[16px] leading-[137%] tracking-[-0.02em] text-black;
+
+      &--size {
+        @apply w-6 h-6;
+      }
+    }
+
+    &__element {
+      @apply inline-block w-5 h-5 rounded-full border-2 border-[#64748b] relative;
+
+      &--selected {
+        @apply border-black after:w-2.5 after:h-2.5 after:bg-black after:absolute after:rounded-full after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2;
+      }
+    }
+  }
+
+  .size {
+    @apply px-4;
+
+    &__title {
+      @apply block py-2.5 headline-xl normal-case;
+    }
+
+    &__text {
+      @apply body-lg;
+
+      &--active {
+        @apply font-medium;
+      }
+    }
+
+    &__tabs {
+      @apply mt-1 flex justify-end w-full gap-[6px];
+
+      &--button {
+        @apply border-b px-[9px] py-2.5 border-[#fff];
+      }
+
+      &--active {
+        @apply border-main_black;
+      }
+    }
+
+    &__image {
+      @apply w-full mt-4;
+    }
+  }
+}
+
+.cart__button {
+  @apply border-none relative w-full  bottom-0 #{!important};
+}
+
+.cart__button .button {
+  @apply rounded-full py-4 px-6 bg-black #{!important};
+}
+
+.payment__actions .button {
+  @apply rounded-full  py-4 px-6 bg-black #{!important};
+}

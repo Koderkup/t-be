@@ -1,0 +1,37 @@
+.select {
+  &__control {
+    @apply rounded-none border-grey_100 min-h-11 #{!important};
+
+    &--is-focused {
+      @apply border-grey_100 shadow-none #{!important};
+    }
+  }
+
+  &__placeholder {
+    @apply whitespace-nowrap #{!important};
+  }
+
+  &__value-container {
+    @apply pl-[14px] #{!important};
+  }
+
+  &__indicator-separator {
+    @apply hidden #{!important};
+  }
+
+  &__menu {
+    @apply mt-0 #{!important};
+  }
+
+  &__menu-list {
+    @apply pt-0 pb-0 #{!important};
+  }
+
+  &__option {
+    @apply border border-grey_100 py-[11px] pl-4 #{!important};
+
+    &--is-selected {
+      @apply bg-grey_20 text-black_100 #{!important};
+    }
+  }
+}

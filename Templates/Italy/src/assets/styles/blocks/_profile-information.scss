@@ -1,0 +1,59 @@
+.profile-information {
+  @apply px-4;
+
+  .form {
+    @apply flex flex-col h-screen justify-between gap-y-4;
+
+    &__block {
+      @apply flex flex-col gap-y-4;
+
+      .customer-info {
+        @apply flex flex-col gap-y-2;
+
+        &__title-block {
+          @apply py-2.5;
+
+          &__title {
+            @apply font-inter font-normal text-[24px] leading-[167%] tracking-[-0.02em] text-[#181a1c];
+          }
+        }
+
+        &__fields {
+          @apply flex flex-col gap-y-3;
+
+          .text-field__default:disabled {
+            @apply disabled:bg-[#f1f5f9] disabled:text-[#64748b] #{!important};
+          }
+        }
+      }
+
+      .select-block {
+        @apply flex flex-col gap-y-2;
+
+        &__name {
+          @apply text-[14px] hidden font-normal leading-[145%] text-[#575a65];
+        }
+
+        &__input {
+          @apply relative;
+
+          &-icon {
+            @apply absolute right-[13px] top-[13px];
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      @apply py-2.5;
+
+      &__button {
+        @apply border border-solid border-black rounded-[9999px] py-[14px] w-full;
+
+        &__button-text {
+          @apply font-primary font-medium text-[18px] leading-[133%] tracking-[-0.01em];
+        }
+      }
+    }
+  }
+}

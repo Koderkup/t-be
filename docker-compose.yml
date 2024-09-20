@@ -1,0 +1,49 @@
+version: '4.0'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    restart: unless-stopped
+    env_file:
+      - .env-prod
+    networks:
+      - my-network
+    ports:
+      - 1337:1337
+    depends_on:
+      - postgresql
+      - redis
+
+  postgresql:
+    image: postgres:16.1
+    container_name: tapply-db
+    restart: unless-stopped
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    env_file:
+      - .env-prod
+    networks:
+      - my-network
+    ports:
+      - 5433:5432
+    
+  redis:
+    image: redis/redis-stack:7.2.0-v6
+    restart: unless-stopped
+    env_file:
+      - .env-prod
+    ports:
+      - '6379:6379'
+    networks:
+      - my-network
+   
+volumes:
+  pg-data:
+  pgadmin-data:
+
+networks:
+  my-network:
+    driver: bridge

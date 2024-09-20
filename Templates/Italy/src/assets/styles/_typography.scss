@@ -1,0 +1,63 @@
+.headline-2xl {
+  @apply text-[40px] leading-[98%] uppercase;
+}
+
+.headline-xl {
+  @apply text-xl leading-[98%] uppercase;
+}
+
+.headline-lg {
+  letter-spacing: -0.01em;
+  @apply text-2xl;
+}
+
+.headline-md {
+  letter-spacing: -0.02em;
+  @apply text-xl;
+}
+
+.headline-sm {
+  letter-spacing: -0.02em;
+  @apply text-lg leading-[122%];
+}
+
+.caption {
+  letter-spacing: 0.06em;
+  @apply text-[18px] leading-[150%];
+}
+
+.body-lg {
+  letter-spacing: -0.02em;
+  @apply text-base leading-[137%];
+}
+
+.body-sm {
+  letter-spacing: 0.07em;
+  @apply text-sm leading-[143%];
+}
+
+.footnote {
+  letter-spacing: -0.03em;
+  @apply text-xs leading-[183%];
+}
+
+.body-xs {
+  letter-spacing: 0.01em;
+  @apply text-[11px] leading-[118%] text-center;
+}
+
+.badge-text {
+  @apply text-[10px] leading-[200%] uppercase tracking-[0.2em] font-normal text-black_90;
+}
+
+.title-text {
+  @apply font-inter font-normal py-[10px] text-black text-[24px] leading-[167%] tracking-tight;
+}
+
+.paragraph-text {
+  @apply text-[12px] font-bold leading-[133%] tracking-[0.08em] text-black_90;
+}
+
+.default-text {
+  @apply font-semibold text-[14px] leading-[200%] tracking-[0.11em] uppercase;
+}

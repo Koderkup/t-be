@@ -1,0 +1,63 @@
+.footer {
+  @apply px-4 pt-[30px] pb-10 bg-[#000];
+
+  &__typo {
+    @apply font-primary font-bold text-[24px] leading-[133%] tracking-[0em] text-white;
+  }
+
+  &__promo-title {
+    @apply font-primary text-[40px] font-bold leading-[110%] whitespace-break-spaces text-[#fff] uppercase tracking-[-0.02em];
+  }
+
+  &__promo-url {
+    @apply inline-block mt-3 text-[#fff] pb-1 border-b;
+  }
+
+  &__arrow {
+    @apply fill-[#fff] w-5 h-5 inline-block ml-1;
+  }
+
+  &__promo-text {
+    @apply font-inter  font-semibold text-[20px] leading-[120%] tracking-[0.06em] text-[#fff];
+  }
+
+  .subscribe {
+    @apply flex gap-2.5 py-4 mt-[22px];
+
+    &__media {
+      @apply w-[167px] h-[188px] flex-[1_0_167px];
+
+      img {
+        @apply w-full h-full object-cover max-w-full rounded-[16px];
+      }
+    }
+
+    &__wrapper {
+      @apply flex flex-col justify-between gap-3 w-full;
+    }
+
+    &__text {
+      @apply flex flex-col gap-3;
+
+      &__title {
+        @apply font-primary font-bold text-[32px] leading-[125%] tracking-[-0.01em] text-white whitespace-break-spaces;
+      }
+
+      &__description {
+        @apply font-inter  font-normal text-[16px] leading-[175%] tracking-[-0.01em] text-white whitespace-break-spaces;
+      }
+    }
+
+    &__button {
+      @apply bg-white rounded-[9999px] w-full;
+
+      &__button-link {
+        @apply flex w-full h-full items-center justify-center;
+      }
+
+      &__button-text {
+        @apply font-primary font-medium text-[16px] leading-[150%] tracking-[-0.01em] text-black;
+      }
+    }
+  }
+}

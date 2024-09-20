@@ -1,0 +1,95 @@
+.cart {
+  @apply flex flex-col h-full justify-between overflow-hidden;
+
+  &__wrapper {
+    @apply flex flex-col px-4 overflow-hidden;
+  }
+
+  &__title {
+    @apply py-2.5 font-normal text-[24px] leading-[167%] tracking-[-0.02em] text-[#181a1c];
+  }
+
+  &__items {
+    @apply overflow-auto h-full hide-scrollbar;
+  }
+}
+
+.cart-item {
+  @apply py-4 flex gap-3 border-b border-solid border-[#e2e8f0];
+
+  &__left-side {
+    @apply w-[100px] h-[128px] flex-shrink-0;
+  }
+
+  &__image {
+    @apply w-full h-full object-cover object-top rounded-[16px];
+  }
+
+  &__right-side {
+    @apply flex flex-col w-full gap-px;
+  }
+
+  &__name {
+    @apply font-inter font-semibold text-[16px] leading-[125%] tracking-[0.08em] text-black;
+  }
+
+  &__wrapper {
+    @apply mt-3;
+  }
+
+  &__inner {
+    @apply flex items-center gap-1.5;
+  }
+
+  &__info {
+    @apply flex items-center justify-center;
+
+    &--bordered {
+      @apply border;
+    }
+  }
+
+  &__show-color {
+    @apply h-2 w-2 rounded-full relative top-[-1px];
+  }
+
+  &__color {
+    @apply font-normal text-[12px] leading-[183%] tracking-[-0.03em];
+  }
+
+  &__divider {
+    @apply text-[rgba(24,26,28,0.6)] hidden;
+  }
+
+  &__size {
+    @apply footnote hidden;
+  }
+
+  &__price {
+    @apply flex items-center gap-2 w-full justify-between;
+
+    &--text {
+      @apply font-inter  font-normal text-[16px] leading-[175%] tracking-[-0.01em] text-black;
+    }
+  }
+
+  &__remove {
+    @apply py-1 px-4;
+
+    &--text {
+      @apply font-normal text-[12px] leading-[183%] tracking-[-0.03em] text-[#64748b];
+    }
+  }
+}
+
+.cart-item:last-child {
+  border-width: 0px !important;
+}
+
+.user__bonuses {
+  @apply flex items-center justify-between mt-4;
+
+  &__button {
+    @apply w-fit rounded-full h-[56px] font-primary font-medium text-[16px] leading-[150%] tracking-[-0.01em] px-[32px] py-4 bg-[#f1f5f9];
+  }
+}

@@ -1,0 +1,39 @@
+.select-size {
+  &__control {
+    @apply h-[40px] border-none body-sm font-normal text-black_90  hover:shadow-none #{!important};
+
+    &--is-focused {
+      @apply shadow-none hover:shadow-none #{!important};
+    }
+
+    &--menu-is-open {
+      @apply shadow-none #{!important};
+    }
+  }
+
+  &__indicator-separator {
+    @apply hidden #{!important};
+  }
+
+  &__menu {
+    @apply z-10  mt-0 mb-0 shadow-none rounded-[5px] border border-solid border-black_30 #{!important};
+  }
+
+  &__menu-list {
+    > div:last-child {
+      @apply border-none #{!important};
+    }
+  }
+
+  &__option {
+    @apply body-sm text-black_90 border-b border-solid border-black_30 font-normal py-1 px-2 #{!important};
+
+    &--is-focused {
+      @apply bg-white #{!important};
+    }
+
+    &--is-selected {
+      @apply bg-white #{!important};
+    }
+  }
+}

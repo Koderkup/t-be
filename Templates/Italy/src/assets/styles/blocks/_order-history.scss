@@ -1,0 +1,72 @@
+.order-history {
+  @apply px-4 pt-[10px];
+
+  &__title {
+    @apply title-text;
+  }
+
+  .orders-list {
+    @apply overflow-auto h-full hide-scrollbar flex flex-col gap-2 mt-2;
+
+    &__item {
+      @apply flex flex-col py-2;
+
+      &--bordered {
+        @apply border-b border-solid border-[#e2e8f0];
+      }
+    }
+
+    .total {
+      @apply flex justify-between items-center;
+
+      &__title {
+        @apply /* font-inter */ font-semibold text-black text-[16px] leading-[125%] tracking-[0.08em];
+      }
+
+      &__price {
+        @apply /* font-inter */ font-semibold text-black text-[16px] leading-[125%] tracking-[0.08em];
+      }
+    }
+
+    .details {
+      @apply flex justify-center;
+
+      &__link {
+        @apply flex items-center;
+      }
+
+      &__text {
+        @apply /* font-inter */ font-normal text-[12px] leading-[133%] text-[#64748b];
+      }
+    }
+
+    .information {
+      @apply flex flex-col gap-1;
+
+      &__date {
+        @apply /* font-inter */ text-[12px] font-normal leading-[133%] text-[#64748b] #{!important};
+      }
+
+      &__item {
+        @apply flex items-center justify-between;
+      }
+
+      &__number {
+        @apply text-[14px] leading-[171%] font-normal tracking-[-0.01em] text-black;
+      }
+    }
+
+    &__items {
+      @apply flex flex-col gap-2;
+    }
+  }
+}
+
+.details__link svg {
+  position: relative;
+  top: -1px;
+}
+
+.order-history .orders-list__items .order-item-card:last-child {
+  border: none !important;
+}

@@ -1,0 +1,85 @@
+.product-page {
+  &__slider {
+    @apply w-full h-screen object-cover;
+  }
+
+  &__wrapper {
+    @apply pb-6 pt-4;
+  }
+
+  & .options {
+    @apply flex flex-col px-4;
+
+    &__button {
+      @apply flex max-w-fit self-end opacity-60 py-2.5 px-4;
+    }
+
+    &__text {
+      @apply body-lg;
+    }
+  }
+
+  & .dropdown {
+    @apply flex;
+
+    &__indicator {
+      @apply fill-main_black opacity-60;
+    }
+
+    &__option {
+      @apply flex items-center gap-1;
+
+      &--color {
+        @apply w-6 h-6 flex items-center justify-center;
+      }
+
+      &--circle {
+        @apply h-4 w-4 rounded-full;
+      }
+
+      &--has-color {
+        @apply border;
+      }
+
+      &--label {
+        @apply body-lg leading-6;
+      }
+    }
+  }
+
+  & .product-info {
+    @apply flex flex-col gap-2 mt-6 w-full;
+
+    &__text {
+      @apply body-lg;
+    }
+
+    &__carelist {
+      @apply body-lg [&>ul]:list-disc [&>ul]:pl-4;
+    }
+
+    &__recommendations {
+      @apply pr-0;
+    }
+
+    &__card {
+      @apply w-auto;
+    }
+
+    &__item {
+      @apply flex flex-col gap-2 pb-4 px-4;
+
+      &--text {
+        @apply body-sm opacity-60;
+      }
+    }
+  }
+}
+
+.slider__block .slider__block__buttons {
+  @apply absolute top-[50%] w-full flex items-center justify-between px-4 z-[20];
+
+  &--prev {
+    @apply rotate-[180deg];
+  }
+}

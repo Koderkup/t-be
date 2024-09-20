@@ -1,0 +1,27 @@
+.input {
+  @apply font-inter  p-4 rounded-[10px] bg-[#f1f5f9] border-[1.50px] focus:border-black  font-medium border-solid outline-none text-[16px] leading-[150%] tracking-[-0.01em] text-black placeholder:text-[#64748b];
+
+  &__default {
+    @apply border-[#e2e8f0];
+  }
+
+  &__error {
+    @apply border-[#dc2626] text-[#dc2626];
+
+    &--text {
+      @apply hidden;
+    }
+  }
+
+  &__succes {
+    @apply border-[#16a34a] text-[#16a34a];
+  }
+
+  &__full {
+    @apply w-full;
+  }
+}
+
+.input__wrapper {
+  width: 100%;
+}

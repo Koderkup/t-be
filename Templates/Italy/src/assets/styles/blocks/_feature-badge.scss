@@ -1,0 +1,15 @@
+.badge {
+  @apply absolute top-6 left-6 flex items-center gap-1 py-[10px] px-4 bg-[#dc2626] rounded-[90px];
+
+  &--column {
+    @apply top-2 left-2;
+  }
+
+  &__text {
+    @apply font-inter  text-[14px] font-semibold leading-[143%] tracking-[0.06em] text-white;
+  }
+}
+
+.badge-new {
+  @apply bg-[#16a34a] #{!important};
+}

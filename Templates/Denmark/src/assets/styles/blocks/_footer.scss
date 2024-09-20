@@ -1,0 +1,63 @@
+.footer {
+  @apply px-4 pt-[30px] pb-10 bg-black_10;
+
+  &__typo {
+    @apply body-sm font-bold text-black_90;
+  }
+
+  &__promo-title {
+    @apply font-third text-[54px] font-normal leading-[90%] whitespace-break-spaces text-black_90;
+  }
+
+  &__promo-url {
+    @apply inline-block mt-3 text-black_90 pb-1 border-b;
+  }
+
+  &__arrow {
+    @apply fill-black_90 w-5 h-5 inline-block ml-1;
+  }
+
+  &__promo-text {
+    @apply headline-sm text-black_90 leading-[150%] tracking-[0.06em] font-bold;
+  }
+
+  .subscribe {
+    @apply flex gap-2.5 py-4 mt-[22px];
+
+    &__media {
+      @apply w-[155px] h-[176px] flex-[1_0_155px];
+
+      img {
+        @apply w-full h-full object-cover max-w-full;
+      }
+    }
+
+    &__wrapper {
+      @apply flex flex-col justify-between gap-3 w-full;
+    }
+
+    &__text {
+      @apply flex flex-col gap-3;
+
+      &__title {
+        @apply body-sm text-black_90 font-bold uppercase whitespace-break-spaces;
+      }
+
+      &__description {
+        @apply font-light text-[12px] leading-[120%] tracking-[0.08em] uppercase text-black_90 whitespace-break-spaces;
+      }
+    }
+
+    &__button {
+      @apply bg-black_90 rounded-none w-full;
+
+      &__button-link {
+        @apply flex w-full h-full items-center justify-center;
+      }
+
+      &__button-text {
+        @apply body-sm leading-[200%] font-semibold tracking-[0.11em] uppercase text-black_10;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.menu {
+  @apply relative z-[100];
+
+  &__wrapper {
+    @apply fixed inset-0 flex flex-col justify-between spacing-animation;
+
+    &--closed {
+      @apply pr-6 pt-6 pointer-events-none;
+    }
+
+    &--open {
+      @apply pr-0 pt-0 pointer-events-auto;
+    }
+  }
+
+  &__inner {
+    @apply flex justify-end;
+  }
+
+  &__backdrop {
+    @apply bg-[rgba(24,26,28,0.8)] p-6 backdrop-blur absolute animation w-full h-[100vh] transform scale-100 rotate-[0.001] rounded-[0px];
+
+    &--closed {
+      @apply w-12 h-12 rounded-[5px];
+    }
+
+    &--open {
+      @apply w-full h-[100vh] transform scale-100 rotate-[0.001] rounded-[0px];
+    }
+  }
+
+  &__items {
+    @apply flex flex-col relative pl-6 pt-4 pb-10 gap-8 list-animation overflow-y-auto;
+
+    &--closed {
+      @apply list-close-animation;
+    }
+
+    &--open {
+      @apply list-open-animation;
+    }
+  }
+
+  &__link {
+    @apply font-third font-normal tracking-[0.02em] text-[64px] leading-[113%] capitalize text-white;
+  }
+
+  .button {
+    @apply flex justify-center items-center w-[48px] h-[48px] rounded-[5px] fixed z-30 right-[24px] top-[24px];
+
+    &__common {
+      @apply relative w-full border-[1px] border-white transition-all duration-500 ease-in-out;
+    }
+
+    &__parts {
+      @apply flex w-[18px] flex-col justify-between gap-[5px];
+
+      &--first {
+        @apply translate-y-[7px] rotate-45;
+      }
+
+      &--second {
+        @apply opacity-0;
+      }
+
+      &--third {
+        @apply -translate-y-[7px] -rotate-45;
+      }
+    }
+  }
+}

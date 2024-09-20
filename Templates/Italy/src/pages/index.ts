@@ -1,0 +1,9 @@
+export { default as MainPage } from './main-page';
+export { default as CategoryPage } from './category-page';
+export { default as ProductPage } from './product-page';
+export { default as InfoPage } from './info-page';
+export { default as OrderHistoryPage } from './order-history-page';
+export { default as OrderDetailsPage } from './order-details-page';
+export { default as ProfilePage } from './profile-page';
+export { default as Navigation } from './navigation';
+export { default as StripeCheckoutPage } from './stripe-checkout-page';

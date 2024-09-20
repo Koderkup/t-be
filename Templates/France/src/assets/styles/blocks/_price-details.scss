@@ -1,0 +1,23 @@
+.price-details {
+  @apply flex items-center justify-between;
+
+  &--is-total {
+    @apply pt-[6px] pb-[14px];
+  }
+
+  &__label {
+    @apply caption text-black_60 font-normal;
+
+    &--is-total {
+      @apply text-black font-medium;
+    }
+  }
+
+  &__price {
+    @apply caption text-main_black font-normal;
+
+    &--is-total {
+      @apply font-medium;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.text-field {
+  @apply flex flex-col gap-2;
+
+  &__label {
+    @apply text-[14px] hidden font-normal leading-[145%] text-[#575a65];
+  }
+
+  &__wrapper {
+    @apply flex flex-col gap-3;
+  }
+
+  &__default {
+    @apply p-4 rounded-[10px] bg-[#f1f5f9] font-medium border-[1.50px] border-solid outline-none font-primary text-[16px] leading-[150%] tracking-[-0.01em] text-black border-[#e2e8f0] focus:text-black  disabled:bg-[#e2e8f0] placeholder:text-[#64748b];
+  }
+
+  &__error {
+    @apply bg-[#fff7f7] border-error text-error focus:text-error focus:border-error focus:bg-[#fff7f7] placeholder:text-error;
+
+    &--message {
+      @apply body-sm text-error;
+    }
+  }
+}

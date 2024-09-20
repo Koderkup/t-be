@@ -1,0 +1,81 @@
+.select-app-currency {
+  &__control {
+    @apply h-12 rounded-[12px] border border-[#efeff0]  px-4 py-[13px] font-normal leading-[140%] text-[#2d313f] tracking-[0.01em] text-[16px] hover:shadow-none #{!important};
+    &--is-focused {
+      @apply shadow-none hover:shadow-none  #{!important};
+    }
+
+    &--menu-is-open {
+      @apply shadow-none #{!important};
+    }
+  }
+
+  &__input-container {
+    @apply p-0 m-0 #{!important};
+  }
+
+  &__value-container {
+    @apply top-[-7px] p-0 m-0 #{!important};
+  }
+
+  &__single-value {
+    @apply m-0 text-[#2d313f] #{!important};
+  }
+
+  &__placeholder {
+    @apply text-[#7e8089] #{!important};
+  }
+
+  &__indicator-separator {
+    @apply hidden #{!important};
+  }
+
+  &__indicator {
+    @apply relative top-[-8px] #{!important};
+  }
+
+  &__menu {
+    @apply z-10 rounded-[12px] text-start font-bold shadow-none mt-2.5  #{!important};
+
+    &-notice {
+      @apply font-medium #{!important};
+    }
+  }
+
+  &__menu-list {
+    @apply rounded-[12px] overflow-auto max-h-[370px] mb-4 pb-0 pt-0 border border-solid border-[#efeff0] #{!important};
+  }
+
+  &__option {
+    @apply border-b-[1px] border-solid border-[#efeff0] px-4 py-2.5 text-[16px] font-normal leading-[137%] tracking-[-0.02em] text-black_100 #{!important};
+
+    &--is-focused {
+      @apply bg-[rgba(0,0,0,0)] #{!important};
+    }
+
+    &--is-selected {
+      @apply bg-grey_20 border-grey_100 relative #{!important};
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -1px;
+        height: 1px;
+        z-index: 20;
+        background-color: #d0d0d1;
+      }
+    }
+  }
+
+  &__option:last-child {
+    @apply border-b-[0px] #{!important};
+  }
+
+  &__option:first-child {
+    &::after {
+      background-color: transparent !important;
+    }
+  }
+}

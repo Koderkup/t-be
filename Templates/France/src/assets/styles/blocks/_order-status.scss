@@ -1,0 +1,20 @@
+.order-status {
+  @apply flex items-center gap-1 px-2 py-1 rounded-[13px] bg-[#000] h-[21px];
+
+  &__text {
+    @apply font-normal text-grey_20 text-[11px] text-center leading-[100%];
+  }
+
+  &__error {
+    @apply text-error;
+  }
+
+  .status-icon path {
+    fill: #f9f9f9;
+  }
+
+  .status-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+}

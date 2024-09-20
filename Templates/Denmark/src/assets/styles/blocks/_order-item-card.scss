@@ -1,0 +1,47 @@
+.order-item-card {
+  @apply flex gap-3;
+
+  &__left-side {
+    @apply flex-shrink-0;
+
+    &--history {
+      @apply w-[79px] h-[104px];
+    }
+
+    &--details {
+      @apply w-[79px] h-[104px];
+    }
+
+    &--image {
+      @apply w-full h-full object-cover object-top;
+    }
+  }
+
+  &__right-side {
+    @apply flex flex-col w-full gap-px justify-between;
+
+    &--details {
+      @apply justify-between;
+    }
+
+    .info {
+      @apply flex flex-col;
+
+      &__name {
+        @apply body-sm font-normal text-black_90;
+      }
+
+      &__prices {
+        @apply body-sm text-black_90 font-normal;
+      }
+
+      &__wrapper {
+        @apply flex items-start gap-1 flex-col #{!important};
+
+        &__text {
+          @apply body-sm text-black_90 font-normal;
+        }
+      }
+    }
+  }
+}

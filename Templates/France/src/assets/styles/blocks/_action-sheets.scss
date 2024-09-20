@@ -1,0 +1,143 @@
+.action-sheet {
+  @apply fixed left-0 top-0 right-0 bottom-0 bg-white z-[100];
+
+  .cart {
+    @apply flex flex-col h-full justify-between overflow-hidden;
+
+    &__button {
+      @apply relative pt-2 px-4 bg-[rgb(255,255,255,0.75)] backdrop-blur-[20px] border-t-[0.33px] border-cartActions;
+    }
+
+    &__text {
+      @apply font-primary caption text-white;
+    }
+
+    .promo-code-form {
+      @apply my-2 relative;
+
+      &__value {
+        @apply opacity-0 invisible absolute font-normal leading-[140%] tracking-[0.01em] text-[16px];
+      }
+
+      &__button {
+        @apply absolute right-[16px] top-[13px] font-normal;
+      }
+
+      &__text {
+        @apply footnote;
+
+        &--remove {
+          @apply text-error #{!important};
+        }
+
+        &--apply {
+          @apply text-black_100 #{!important};
+        }
+
+        &--valid {
+          @apply text-black_60 #{!important};
+        }
+      }
+    }
+
+    .discount {
+      @apply flex justify-between py-[14px];
+
+      &__text {
+        @apply text-black_60 caption;
+      }
+
+      &__price {
+        @apply font-normal text-black_100 caption;
+      }
+    }
+
+    .total {
+      @apply flex justify-between py-[14px];
+
+      &__title {
+        @apply caption;
+      }
+
+      &__currency {
+        @apply font-medium caption;
+      }
+    }
+  }
+
+  .payment {
+    @apply flex flex-col h-full;
+
+    &__wrapper {
+      @apply flex flex-col gap-2 flex-grow px-4;
+    }
+
+    &__title {
+      @apply block py-2.5 headline-md;
+    }
+
+    &__wallet {
+      @apply w-full [&_div]:w-full [&_button]:w-full #{!important};
+    }
+
+    &__actions {
+      @apply relative pt-2 px-4 bg-[rgb(255,255,255,0.75)] backdrop-blur-[20px] border-t-[0.33px] border-cartActions;
+    }
+
+    &__text {
+      @apply font-primary caption text-white;
+    }
+
+    &__item {
+      @apply flex items-center gap-4 px-4 py-3 bg-grey_20 rounded-xl;
+    }
+
+    &__icon {
+      @apply flex items-center gap-4 flex-grow;
+
+      &--size {
+        @apply w-6 h-6;
+      }
+    }
+
+    &__element {
+      @apply inline-block w-5 h-5 rounded-full border-2 border-black_40 relative;
+
+      &--selected {
+        @apply border-black_60 after:w-2.5 after:h-2.5 after:bg-black_60 after:absolute after:rounded-full after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2;
+      }
+    }
+  }
+
+  .size {
+    @apply px-4;
+
+    &__title {
+      @apply block py-2.5 headline-xl normal-case;
+    }
+
+    &__text {
+      @apply body-lg;
+
+      &--active {
+        @apply font-medium;
+      }
+    }
+
+    &__tabs {
+      @apply mt-1 flex justify-end w-full gap-[6px];
+
+      &--button {
+        @apply border-b px-[9px] py-2.5 border-[#fff];
+      }
+
+      &--active {
+        @apply border-main_black;
+      }
+    }
+
+    &__image {
+      @apply w-full mt-4;
+    }
+  }
+}

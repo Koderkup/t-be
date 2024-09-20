@@ -1,0 +1,63 @@
+.order-history {
+    @apply px-4 pt-[10px];
+
+  &__title {
+    @apply font-normal text-main_black headline-md;
+  }
+
+  .orders-list {
+    @apply overflow-auto h-full hide-scrollbar flex flex-col gap-2 mt-2;
+
+    &__item {
+      @apply flex flex-col gap-2 py-2;
+
+      &--bordered {
+        @apply border-b border-[rgba(24,26,28,0.2)];
+      }
+    }
+
+    .total {
+      @apply flex justify-between items-center;
+
+      &__title {
+        @apply font-medium text-main_black body-lg;
+      }
+
+      &__price {
+        @apply font-medium text-main_black body-lg;
+      }
+    }
+
+    .details {
+      @apply flex justify-center;
+
+      &__link {
+        @apply flex items-center;
+      }
+
+      &__text {
+        @apply font-normal text-black_60 footnote;
+      }
+    }
+
+    .information {
+      @apply flex flex-col gap-1;
+
+      &__date {
+        @apply text-black_60 font-medium body-xs text-start #{!important};
+      }
+
+      &__item {
+        @apply flex items-center justify-between;
+      }
+
+      &__number {
+        @apply text-[14px] leading-[129%] font-normal tracking-[-0.01em] text-black_100;
+      }
+    }
+
+    &__items {
+      @apply flex flex-col gap-2;
+    }
+  }
+}

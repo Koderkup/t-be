@@ -1,0 +1,45 @@
+.select {
+  &__option {
+    @apply flex flex-col gap-[12px] items-center mt-4;
+
+    &__colorBlock {
+      @apply flex items-center gap-[22px];
+    }
+
+    &__sizeBlock {
+      @apply flex items-center gap-[20px];
+    }
+
+    &__sizeButton {
+      @apply p-3;
+    }
+
+    &--color {
+      @apply w-[32px] h-[32px] flex justify-center items-center rounded-[60px] #{!important};
+    }
+
+    &--circle {
+      @apply w-[24px] h-[24px] block border border-solid border-[#af9484] rounded-[100%] #{!important};
+    }
+
+    &--label {
+      @apply text-[13px] font-semibold text-black_50 uppercase leading-[150%] tracking-[0.12em];
+    }
+
+    &--active_color {
+      @apply border border-solid border-black_70;
+    }
+
+    &--active_label {
+      @apply text-black_90;
+    }
+  }
+}
+
+.select__option__title {
+  @apply text-[12px] font-bold leading-[133%] tracking-[0.08em] text-black_90 #{!important};
+}
+
+.select__option__colorName {
+  @apply text-[12px] font-light leading-[130%] tracking-[0.08em] text-black_70 #{!important};
+}

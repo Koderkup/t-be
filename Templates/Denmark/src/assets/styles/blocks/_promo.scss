@@ -1,0 +1,21 @@
+.promo-block {
+  &__wrapper {
+    @apply flex justify-end pb-[90px] flex-col gap-[14px] items-center w-screen h-screen bg-no-repeat bg-cover;
+  }
+
+  &__description {
+    @apply pb-[90px] justify-center #{!important};
+  }
+
+  &__textWrapper {
+    @apply flex flex-col;
+  }
+
+  &__text {
+    @apply font-third font-normal text-[54px] leading-[90%] text-center text-black_05;
+  }
+
+  &__link {
+    @apply font-semibold text-[14px] leading-[200%] tracking-[0.11em] capitalize underline underline-offset-2 text-center text-black_05;
+  }
+}

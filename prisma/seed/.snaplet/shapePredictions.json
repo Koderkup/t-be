@@ -1,0 +1,688 @@
+[
+  {
+    "schemaName": "public",
+    "tableName": "AdBlock",
+    "predictions": [
+      {
+        "input": "public ad_block button_link",
+        "column": "buttonLink",
+        "shape": "MEDIA_LINK",
+        "confidence": 0.5583135485649109,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block button_text",
+        "column": "buttonText",
+        "shape": "POST_BODY",
+        "confidence": 0.7161353230476379,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block description",
+        "column": "description",
+        "shape": "COMPANY_CATCH_PHRASE",
+        "confidence": 0.8739811182022095,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9985352754592896,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block promo_link",
+        "column": "promoLink",
+        "shape": "URL",
+        "confidence": 0.6815642714500427,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block promo_title",
+        "column": "promoTitle",
+        "shape": "POST_TITLE",
+        "confidence": 0.4527212977409363,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block promo_url",
+        "column": "promoURL",
+        "shape": "IMAGE_URL",
+        "confidence": 0.9092851877212524,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public ad_block title",
+        "column": "title",
+        "shape": "POST_TITLE",
+        "confidence": 0.6263797283172607,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "AppConfiguration",
+    "predictions": [
+      {
+        "input": "public app_configuration email",
+        "column": "email",
+        "shape": "EMAIL",
+        "confidence": 0.9949809908866882,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public app_configuration email_password",
+        "column": "emailPassword",
+        "shape": "PASSWORD",
+        "confidence": 0.9882302284240723,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public app_configuration id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9961233735084534,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public app_configuration location",
+        "column": "location",
+        "shape": "LOCATION_BUILDING_NUMBER",
+        "confidence": 0.8918773531913757,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public app_configuration phone_number",
+        "column": "phoneNumber",
+        "shape": "PHONE_NUMBER",
+        "confidence": 0.9730958938598633,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "CareList",
+    "predictions": [
+      {
+        "input": "public care_list id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9983150959014893,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public care_list name",
+        "column": "name",
+        "shape": "ANIMAL_TYPE",
+        "confidence": 0.3337952494621277,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public care_list text",
+        "column": "text",
+        "shape": "POST_BODY",
+        "confidence": 0.8997215628623962,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "CategoryType",
+    "predictions": [
+      {
+        "input": "public category_type description",
+        "column": "description",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.6522091031074524,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public category_type id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9970093965530396,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public category_type name",
+        "column": "name",
+        "shape": "COMMERCE_PRODUCT",
+        "confidence": 0.228095754981041,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Color",
+    "predictions": [
+      {
+        "input": "public color hex_code",
+        "column": "hexCode",
+        "shape": "ZIP_CODE",
+        "confidence": 0.3320219814777374,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public color id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9145899415016174,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public color name",
+        "column": "name",
+        "shape": "INTERNET_COLOR",
+        "confidence": 0.6232998967170715,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Customer",
+    "predictions": [
+      {
+        "input": "public customer telegram_id",
+        "column": "telegramID",
+        "shape": "UUID",
+        "confidence": 0.9967930912971497,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Dashboard",
+    "predictions": [
+      {
+        "input": "public dashboard analytics",
+        "column": "analytics",
+        "shape": "COMMERCE_PRODUCT",
+        "confidence": 0.245553195476532,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public dashboard id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9965183734893799,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public dashboard logs",
+        "column": "logs",
+        "shape": "LOGS",
+        "confidence": 0.997895359992981,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public dashboard notifications",
+        "column": "notifications",
+        "shape": "NOTIFICATIONS",
+        "confidence": 0.9925166964530945,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Design",
+    "predictions": [
+      {
+        "input": "public design color",
+        "column": "color",
+        "shape": "INTERNET_COLOR",
+        "confidence": 0.9711573123931885,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public design description",
+        "column": "description",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.4965619742870331,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public design font_style",
+        "column": "font_style",
+        "shape": "DATABASE_COLUMN",
+        "confidence": 0.103343166410923,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public design highlight_color",
+        "column": "highlightColor",
+        "shape": "INTERNET_COLOR",
+        "confidence": 0.9720279574394226,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public design name",
+        "column": "name",
+        "shape": "PERSON_FULL_NAME",
+        "confidence": 0.600806474685669,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Functionality",
+    "predictions": [
+      {
+        "input": "public functionality description",
+        "column": "description",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.8791749477386475,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public functionality name",
+        "column": "name",
+        "shape": "COMMERCE_PRODUCT_NAME",
+        "confidence": 0.6037356853485107,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Media",
+    "predictions": [
+      {
+        "input": "public media aws_file_key",
+        "column": "aws_file_key",
+        "shape": "AWS_SERVICE",
+        "confidence": 0.8781753778457642,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public media id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9852170348167419,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Order",
+    "predictions": [
+      {
+        "input": "public order address",
+        "column": "address",
+        "shape": "FULL_ADDRESS",
+        "confidence": 0.9597344398498535,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public order email",
+        "column": "email",
+        "shape": "EMAIL",
+        "confidence": 0.995664656162262,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public order id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9865091443061829,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public order payment",
+        "column": "payment",
+        "shape": "FINANCE_PAYMENT_METHOD",
+        "confidence": 0.7496582269668579,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "OrderItem",
+    "predictions": [
+      {
+        "input": "public order_item id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9866282939910889,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "ProductItem",
+    "predictions": [
+      {
+        "input": "public product_item description_full",
+        "column": "descriptionFull",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.6775184273719788,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product_item description_short",
+        "column": "descriptionShort",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.8492619395256042,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product_item featured_text",
+        "column": "featuredText",
+        "shape": "POST_BODY",
+        "confidence": 0.5125758051872253,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product_item id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9963487386703491,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product_item name",
+        "column": "name",
+        "shape": "COMMERCE_PRODUCT_NAME",
+        "confidence": 0.8102368116378784,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "PromoCode",
+    "predictions": [
+      {
+        "input": "public promo_code code",
+        "column": "code",
+        "shape": "TOKEN",
+        "confidence": 0.894700288772583,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public promo_code id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9866247177124023,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "PromotionalBlock",
+    "predictions": [
+      {
+        "input": "public promotional_block button_text",
+        "column": "buttonText",
+        "shape": "POST_BODY",
+        "confidence": 0.6671373844146729,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public promotional_block description",
+        "column": "description",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.8586333394050598,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public promotional_block id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9974873065948486,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public promotional_block link",
+        "column": "link",
+        "shape": "URL",
+        "confidence": 0.9074047207832336,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public promotional_block title",
+        "column": "title",
+        "shape": "POST_TITLE",
+        "confidence": 0.5506499409675598,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Recommendation",
+    "predictions": [
+      {
+        "input": "public recommendation id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9987441301345825,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Segment",
+    "predictions": [
+      {
+        "input": "public segment description",
+        "column": "description",
+        "shape": "COMMERCE_PRODUCT_DESCRIPTION",
+        "confidence": 0.8656747341156006,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public segment id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9839767217636108,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Shop",
+    "predictions": [
+      {
+        "input": "public shop id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9986497759819031,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public shop name",
+        "column": "name",
+        "shape": "COMPANY_NAME",
+        "confidence": 0.7,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public shop telegram_id",
+        "column": "telegramId",
+        "shape": "UUID",
+        "confidence": 0.9977686405181885,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public shop type",
+        "column": "type",
+        "shape": "COMMERCE_DEPARTMENT",
+        "confidence": 0.1991046369075775,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Size",
+    "predictions": [
+      {
+        "input": "public size id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9982646107673645,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public size name",
+        "column": "name",
+        "shape": "COMPANY_NAME",
+        "confidence": 0.2228524833917618,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "User",
+    "predictions": [
+      {
+        "input": "public user email",
+        "column": "email",
+        "shape": "EMAIL",
+        "confidence": 0.99404376745224,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public user firstname",
+        "column": "firstname",
+        "shape": "PERSON_FIRST_NAME",
+        "confidence": 0.9281997680664062,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public user id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9964122176170349,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public user lastname",
+        "column": "lastname",
+        "shape": "PERSON_LAST_NAME",
+        "confidence": 0.90913325548172,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public user password",
+        "column": "password",
+        "shape": "PASSWORD",
+        "confidence": 0.9340711236000061,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public user telegram_id",
+        "column": "telegramId",
+        "shape": "UUID",
+        "confidence": 0.9978491067886353,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "UserPayment",
+    "predictions": [
+      {
+        "input": "public user_payment id",
+        "column": "id",
+        "shape": "UUID",
+        "confidence": 0.9961810111999512,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public user_payment payment_identifier",
+        "column": "paymentIdentifier",
+        "shape": "UUID",
+        "confidence": 0.6572170257568359,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  }
+]

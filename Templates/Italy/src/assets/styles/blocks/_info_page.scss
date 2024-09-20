@@ -1,0 +1,75 @@
+.info-page {
+  @apply px-4 mt-[10px] flex flex-col justify-between h-screen gap-[20px];
+
+  &__title {
+    @apply font-inter  font-normal text-[24px] leading-[167%] tracking-[-0.02em] text-[#181a1c] py-2.5;
+  }
+
+  .contact-info {
+    @apply mt-2 flex flex-col gap-2;
+
+    &__button {
+      @apply flex flex-col;
+    }
+
+    &__location {
+      @apply font-inter font-normal underline underline-offset-[3px] text-[16px] tracking-[-0.01em] leading-[175%] text-black;
+    }
+
+    &__row {
+      @apply flex flex-col;
+    }
+
+    &__value {
+      @apply font-inter  font-normal underline underline-offset-[3px] text-[16px] tracking-[-0.01em] leading-[175%] text-black;
+    }
+
+    &__text {
+      @apply font-inter  font-normal text-[16px] leading-[175%] tracking-[-0.01em] text-[#64748b];
+    }
+  }
+
+  .help-form {
+    @apply mt-6;
+
+    &__title {
+      @apply font-inter  py-[10px] font-semibold text-[20px] leading-[120%] tracking-[0.06em] text-[#181a1c];
+    }
+
+    &__form {
+      @apply mt-2 flex flex-col gap-[70px];
+    }
+
+    &__wrapper {
+      @apply flex flex-col gap-3 mt-2;
+    }
+
+    &__textarea {
+      @apply resize-none overflow-hidden;
+    }
+  }
+}
+
+.actions {
+  @apply flex flex-col gap-3;
+
+  &__submit {
+    @apply border border-solid border-black rounded-[9999px] py-[14px] w-full;
+  }
+
+  &__text {
+    @apply font-primary font-medium text-[18px] leading-[133%] tracking-[-0.01em];
+  }
+
+  &__info {
+    @apply text-center;
+  }
+
+  &__link {
+    @apply underline underline-offset-4 text-blue;
+
+    &--text {
+      @apply font-inter  font-normal text-[16px] leading-[175%] tracking-[-0.01em] text-blue;
+    }
+  }
+}

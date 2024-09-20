@@ -1,0 +1,691 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model AppConfiguration {
+  id                            String     @id @default(uuid())
+  minOrderAmountWithDelivery    Float?     @default(0.0)
+  minOrderAmountWithoutDelivery Float?     @default(0.0)
+  location                      String
+  phoneNumber                   String
+  email                         String
+  emailPassword                 String?
+  shopCurrencies                Currency[] @default([])
+  shop                          Shop?      @relation(fields: [shopId], references: [id])
+  shopId                        String?    @unique
+  botToken                      String?
+  country                       Country?
+  forwardingId                  String?
+  botMessages                   Json?
+  mediaUrl                      String?
+  url                           String?
+}
+
+model Customer {
+  telegramID        String    @id @unique
+  orders            Order[]
+  preferredCurrency Currency? @default(USD)
+  shopId            String
+  shop              Shop      @relation(fields: [shopId], references: [id])
+  lastLogin         DateTime
+  Comment           Comment[]
+}
+
+model PromoCode {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  discount  Float
+  isActive  Boolean  @default(true)
+  startDate DateTime
+  endDate   DateTime
+  order     Order[]
+  shopId    String
+  shop      Shop     @relation(fields: [shopId], references: [id])
+}
+
+model User {
+  id          String        @id @default(uuid())
+  telegramId  String        @unique
+  firstname   String
+  lastname    String
+  email       String?       @unique
+  password    String?
+  role        Role          @default(user)
+  shops       Shop[]        @relation
+  userPayment UserPayment[]
+  mediaUrl    String?
+}
+
+enum PaymentType {
+  stripe
+  ton
+}
+
+model UserPayment {
+  id                String          @id @default(uuid())
+  paymentIdentifier String
+  paymentMethod     PaymentType
+  totalPrice        Float
+  currency          Currency?
+  functionalities   Functionality[]
+  shopId            String
+  shop              Shop            @relation(fields: [shopId], references: [id])
+  userId            String
+  user              User            @relation(fields: [userId], references: [id])
+  designId          Int
+  design            Design          @relation(fields: [designId], references: [id])
+}
+
+model Template {
+  id          String  @id @default(uuid())
+  name        String  @unique
+  description String
+  mediaUrl    String?
+  isBlocked   Boolean
+  shop        Shop[]
+}
+
+model Shop {
+  id                String              @id @default(uuid())
+  name              String
+  telegramId        String?
+  userId            String?
+  type              String
+  inDraft           Boolean             @default(true)
+  user              User?               @relation(fields: [userId], references: [id])
+  customers         Customer[]
+  promoCodes        PromoCode[]
+  products          ProductItem[]
+  orders            Order[]
+  configuration     AppConfiguration?
+  promotionalBlock  PromotionalBlock[]
+  categoryType      CategoryType[]
+  careList          CareList[]
+  color             Color[]
+  size              Size[]
+  recommendation    Recommendation[]
+  orderItem         OrderItem[]
+  adBlock           AdBlock[]
+  functionalities   Functionality[]
+  design            Design?             @relation(fields: [design_id], references: [id])
+  design_id         Int?
+  userPayment       UserPayment[]
+  templateId        String?
+  template          Template?           @relation(fields: [templateId], references: [id])
+  description       String
+  mediaUrl          String?
+  subscriberMessage SubscriberMessage[]
+}
+
+enum SubscriberMessageStatus {
+  Pending
+  Sent
+}
+
+model SubscriberMessage {
+  id        String                  @id @default(uuid())
+  message   String?
+  mediaUrl  String?
+  createdAt DateTime                @default(now())
+  shopId    String
+  shop      Shop                    @relation(fields: [shopId], references: [id])
+  status    SubscriberMessageStatus
+}
+
+model PromotionalBlock {
+  id          String   @id @default(uuid())
+  link        String
+  title       String?
+  description String?
+  buttonText  String?
+  isActive    Boolean
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  shopId      String
+  shop        Shop     @relation(fields: [shopId], references: [id])
+  mediaUrl    String?
+}
+
+model CategoryType {
+  id            String         @id @default(uuid())
+  name          String         @unique
+  description   String
+  parentId      String?
+  parent        CategoryType?  @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  subcategories CategoryType[] @relation("CategoryHierarchy")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  products      ProductItem[]
+  shopId        String
+  shop          Shop           @relation(fields: [shopId], references: [id])
+}
+
+model ProductItem {
+  id               String           @id @default(uuid())
+  name             String
+  descriptionFull  String
+  descriptionShort String
+  prices           Json
+  cost             Float
+  stock            Int
+  currency         Currency
+  careListId       String?
+  categoryTypeId   String?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  orderItems       OrderItem[]
+  careList         CareList?        @relation(fields: [careListId], references: [id])
+  categoryType     CategoryType?    @relation(fields: [categoryTypeId], references: [id])
+  recommendations  Recommendation[] @relation("ProductRecommendations")
+  recommendedBy    Recommendation[] @relation("RecommendedProductItems")
+  colors           Color[]          @relation("ProductItemToColor")
+  sizes            Size[]           @relation("ProductItemToSize")
+  discount         Int
+  isFeatured       Boolean
+  featuredText     String?
+  shopId           String
+  shop             Shop             @relation(fields: [shopId], references: [id])
+  mediasUrl        String[]
+  Comment          Comment[]
+  popularity       Float            @default(0)
+}
+
+model Comment {
+  id            String      @id @default(uuid())
+  productItemId String
+  content       String?
+  rating        Int
+  customerId    String
+  customer      Customer    @relation(fields: [customerId], references: [telegramID])
+  productItem   ProductItem @relation(fields: [productItemId], references: [id])
+}
+
+model CareList {
+  id       String        @id @default(uuid())
+  name     String        @unique
+  text     String
+  products ProductItem[]
+  shopId   String
+  shop     Shop          @relation(fields: [shopId], references: [id])
+}
+
+model Color {
+  id           String        @id @default(uuid())
+  name         String
+  hexCode      String
+  productItems ProductItem[] @relation("ProductItemToColor")
+  shopId       String
+  shop         Shop          @relation(fields: [shopId], references: [id])
+  OrderItem    OrderItem[]
+}
+
+model Size {
+  id           String        @id @default(uuid())
+  name         String
+  productItems ProductItem[] @relation("ProductItemToSize")
+  shopId       String
+  shop         Shop          @relation(fields: [shopId], references: [id])
+  OrderItem    OrderItem[]
+}
+
+enum SourceType {
+  User
+  AI
+}
+
+model Recommendation {
+  id                String      @id @default(uuid())
+  productItemId     String
+  recommendedItemId String
+  sourceType        SourceType  @default(User)
+  productItem       ProductItem @relation("ProductRecommendations", fields: [productItemId], references: [id], onDelete: Cascade)
+  recommendedItem   ProductItem @relation("RecommendedProductItems", fields: [recommendedItemId], references: [id], onDelete: Cascade)
+  shopId            String
+  shop              Shop        @relation(fields: [shopId], references: [id])
+
+  @@unique([productItemId, recommendedItemId])
+}
+
+model Order {
+  id             String      @id @default(uuid())
+  orderNumber    Int         @unique
+  customerId     String
+  totalPrice     Json
+  currency       Currency
+  isDelivery     Boolean     @default(false)
+  email          String?
+  address        String?
+  payment        String?
+  discountAmount Float?      @default(0)
+  deliveryPrice  Float?      @default(0)
+  createdAt      DateTime    @default(now())
+  status         OrderStatus @default(Pending)
+  customer       Customer    @relation(fields: [customerId], references: [telegramID])
+  items          OrderItem[]
+  promoCodeId    String?
+  promoCode      PromoCode?  @relation(fields: [promoCodeId], references: [id])
+  shopId         String
+  shop           Shop        @relation(fields: [shopId], references: [id])
+}
+
+model OrderItem {
+  id            String      @id @default(uuid())
+  orderId       String
+  productItemId String
+  quantity      Int
+  prices        Json
+  shopId        String
+  colorId       String?
+  sizeId        String?
+  order         Order       @relation(fields: [orderId], references: [id])
+  productItem   ProductItem @relation(fields: [productItemId], references: [id])
+  shop          Shop        @relation(fields: [shopId], references: [id])
+  color         Color?      @relation(fields: [colorId], references: [id])
+  size          Size?       @relation(fields: [sizeId], references: [id])
+}
+
+model AdBlock {
+  id          String   @id @default(uuid())
+  promoTitle  String
+  promoLink   String
+  promoURL    String
+  isActive    Boolean
+  title       String?
+  description String?
+  buttonText  String?
+  buttonLink  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  shopId      String
+  shop        Shop     @relation(fields: [shopId], references: [id])
+  mediaUrl    String?  @unique
+}
+
+model Dashboard {
+  id            String @id @default(uuid())
+  logs          String
+  notifications String
+  analytics     String
+}
+
+model Segment {
+  id          String      @id @default(uuid())
+  type        SegmentType @unique
+  description String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+enum Role {
+  user
+  admin
+}
+
+enum OrderStatus {
+  Pending
+  Paid
+  Confirmed
+  Shipped
+  Delivered
+  Cancelled
+}
+
+enum Currency {
+  AED // United Arab Emirates Dirham
+  ARS // Argentine Peso
+  AUD // Australian Dollar
+  BDT // Bangladeshi Taka
+  BGN // Bulgarian Lev
+  BHD // Bahraini Dinar
+  BRL // Brazilian Real
+  CAD // Canadian Dollar
+  CHF // Swiss Franc
+  CLP // Chilean Peso
+  CNY // Chinese Yuan
+  COP // Colombian Peso
+  CZK // Czech Koruna
+  DKK // Danish Krone
+  EGP // Egyptian Pound
+  EUR // Euro
+  GBP // British Pound Sterling
+  HKD // Hong Kong Dollar
+  HUF // Hungarian Forint
+  IDR // Indonesian Rupiah
+  ILS // Israeli New Sheqel
+  INR // Indian Rupee
+  JPY // Japanese Yen
+  KRW // South Korean Won
+  KWD // Kuwaiti Dinar
+  LKR // Sri Lankan Rupee
+  MAD // Moroccan Dirham
+  MXN // Mexican Peso
+  MYR // Malaysian Ringgit
+  NGN // Nigerian Naira
+  NOK // Norwegian Krone
+  NZD // New Zealand Dollar
+  OMR // Omani Rial
+  PEN // Peruvian Nuevo Sol
+  PHP // Philippine Peso
+  PKR // Pakistani Rupee
+  PLN // Polish Zloty
+  QAR // Qatari Rial
+  RON // Romanian Leu
+  RUB // Russian Ruble
+  SAR // Saudi Riyal
+  SEK // Swedish Krona
+  SGD // Singapore Dollar
+  THB // Thai Baht
+  TRY // Turkish Lira
+  TWD // New Taiwan Dollar
+  USD // United States Dollar
+  VEF // Venezuelan Bolívar
+  VND // Vietnamese Dong
+  ZAR // South African Rand
+}
+
+enum SegmentType {
+  WithOrders
+  WithoutOrders
+  PendingStatus
+  InactiveCustomers
+}
+
+enum FunctionalityType {
+  AIAssistant
+  AIRecommendations
+  PromoCode
+}
+
+model Functionality {
+  id                 Int                @id @default(autoincrement())
+  name               String
+  description        String
+  mediaUrl           String?
+  price              Float
+  shops              Shop[]
+  userPayment        UserPayment[]
+  type               FunctionalityType?
+  infoForAIAssistant String?
+}
+
+model Design {
+  id         Int     @id @default(autoincrement())
+  name       String?
+  mediaUrl   String?
+  color      String?
+  font_style String?
+  price      Float
+
+  theme          Theme?
+  highlightColor String?
+  textSize       Float?
+  description    String?
+  shops          Shop[]
+  userPayment    UserPayment[]
+  tags           String[]
+}
+
+enum Theme {
+  Dark
+  Light
+  Automatic
+}
+
+enum Country {
+  Andorra
+  UnitedArabEmirates
+  Afghanistan
+  AntiguaAndBarbuda
+  Anguilla
+  Albania
+  Armenia
+  Angola
+  Antarctica
+  Argentina
+  AmericanSamoa
+  Austria
+  Australia
+  Aruba
+  AlandIslands
+  Azerbaijan
+  BosniaAndHerzegovina
+  Barbados
+  Bangladesh
+  Belgium
+  BurkinaFaso
+  Bulgaria
+  Bahrain
+  Burundi
+  Benin
+  SaintBarthelemy
+  Bermuda
+  BruneiDarussalam
+  Bolivia
+  BonaireSintEustatiusAndSaba
+  Brazil
+  Bahamas
+  Bhutan
+  BouvetIsland
+  Botswana
+  Belarus
+  Belize
+  Canada
+  CocosKeelingIslands
+  DemocraticRepublicOfTheCongo
+  CentralAfricanRepublic
+  RepublicOfTheCongo
+  Switzerland
+  CoteDIvoire
+  CookIslands
+  Chile
+  Cameroon
+  PeoplesRepublicOfChina
+  Colombia
+  CostaRica
+  Cuba
+  CapeVerde
+  Curacao
+  ChristmasIsland
+  Cyprus
+  CzechRepublic
+  Germany
+  Djibouti
+  Denmark
+  Dominica
+  DominicanRepublic
+  Algeria
+  Ecuador
+  Estonia
+  Egypt
+  WesternSahara
+  Eritrea
+  Spain
+  Ethiopia
+  Finland
+  Fiji
+  FalklandIslandsMalvinas
+  MicronesiaFederatedStatesOf
+  FaroeIslands
+  France
+  Gabon
+  UnitedKingdom
+  Grenada
+  Georgia
+  FrenchGuiana
+  Guernsey
+  Ghana
+  Gibraltar
+  Greenland
+  RepublicOfTheGambia
+  Guinea
+  Guadeloupe
+  EquatorialGuinea
+  Greece
+  SouthGeorgiaAndTheSouthSandwichIslands
+  Guatemala
+  Guam
+  GuineaBissau
+  Guyana
+  HongKong
+  HeardIslandAndMcDonaldIslands
+  Honduras
+  Croatia
+  Haiti
+  Hungary
+  Indonesia
+  Ireland
+  Israel
+  IsleOfMan
+  India
+  BritishIndianOceanTerritory
+  Iraq
+  IslamicRepublicOfIran
+  Iceland
+  Italy
+  Jersey
+  Jamaica
+  Jordan
+  Japan
+  Kenya
+  Kyrgyzstan
+  Cambodia
+  Kiribati
+  Comoros
+  SaintKittsAndNevis
+  NorthKorea
+  SouthKorea
+  Kuwait
+  CaymanIslands
+  Kazakhstan
+  LaoPeoplesDemocraticRepublic
+  Lebanon
+  SaintLucia
+  Liechtenstein
+  SriLanka
+  Liberia
+  Lesotho
+  Lithuania
+  Luxembourg
+  Latvia
+  Libya
+  Morocco
+  Monaco
+  MoldovaRepublicOf
+  Montenegro
+  SaintMartinFrenchPart
+  Madagascar
+  MarshallIslands
+  TheRepublicOfNorthMacedonia
+  Mali
+  Myanmar
+  Mongolia
+  Macao
+  NorthernMarianaIslands
+  Martinique
+  Mauritania
+  Montserrat
+  Malta
+  Mauritius
+  Maldives
+  Malawi
+  Mexico
+  Malaysia
+  Mozambique
+  Namibia
+  NewCaledonia
+  Niger
+  NorfolkIsland
+  Nigeria
+  Nicaragua
+  Netherlands
+  Norway
+  Nepal
+  Nauru
+  Niue
+  NewZealand
+  Oman
+  Panama
+  Peru
+  FrenchPolynesia
+  PapuaNewGuinea
+  Philippines
+  Pakistan
+  Poland
+  SaintPierreAndMiquelon
+  Pitcairn
+  PuertoRico
+  StateOfPalestine
+  Portugal
+  Palau
+  Paraguay
+  Qatar
+  Reunion
+  Romania
+  Serbia
+  RussianFederation
+  Rwanda
+  SaudiArabia
+  SolomonIslands
+  Seychelles
+  Sudan
+  Sweden
+  Singapore
+  SaintHelena
+  Slovenia
+  SvalbardAndJanMayen
+  Slovakia
+  SierraLeone
+  SanMarino
+  Senegal
+  Somalia
+  Suriname
+  SouthSudan
+  SaoTomeAndPrincipe
+  ElSalvador
+  SintMaartenDutchPart
+  SyrianArabRepublic
+  Eswatini
+  TurksAndCaicosIslands
+  Chad
+  FrenchSouthernTerritories
+  Togo
+  Thailand
+  Tajikistan
+  Tokelau
+  TimorLeste
+  Turkmenistan
+  Tunisia
+  Tonga
+  Turkiye
+  TrinidadAndTobago
+  Tuvalu
+  TaiwanProvinceOfChina
+  UnitedRepublicOfTanzania
+  Ukraine
+  Uganda
+  UnitedStatesMinorOutlyingIslands
+  UnitedStatesOfAmerica
+  Uruguay
+  Uzbekistan
+  HolySeeVaticanCityState
+  SaintVincentAndTheGrenadines
+  Venezuela
+  VirginIslandsBritish
+  VirginIslandsUS
+  Vietnam
+  Vanuatu
+  WallisAndFutuna
+  Samoa
+  Kosovo
+  Yemen
+  Mayotte
+  SouthAfrica
+  Zambia
+  Zimbabwe
+}

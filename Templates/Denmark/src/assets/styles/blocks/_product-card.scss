@@ -1,0 +1,67 @@
+.card {
+  @apply flex gap-1.5 relative;
+
+  &--full {
+    @apply flex-col w-full;
+  }
+
+  &--column {
+    @apply flex-col w-[calc(50%-6px)] row-span-1;
+  }
+
+  &--small {
+    @apply w-[calc(25%-1px)];
+  }
+
+  &__image {
+    @apply object-top object-cover;
+
+    &__wrapper {
+      @apply relative;
+    }
+
+    &--full {
+      @apply h-[500px] w-full;
+    }
+
+    &--column {
+      @apply h-[206px] w-full;
+    }
+
+    &--small {
+      @apply h-[111px] w-full;
+    }
+  }
+
+  &__info {
+    @apply flex items-center justify-between;
+
+    &--column {
+      @apply flex-col items-start justify-start gap-[2px];
+    }
+  }
+
+  &__name {
+    @apply flex flex-col gap-x-1;
+  }
+
+  &__text {
+    @apply text-[14px] leading-[143%] text-black_90 font-normal tracking-[0.07em];
+  }
+
+  &__cost {
+    @apply flex gap-2.5;
+  }
+
+  &__price {
+    @apply body-sm text-black_90 font-bold whitespace-nowrap;
+  }
+
+  &__price_unactive {
+    @apply text-black_50;
+  }
+
+  &__discount {
+    @apply body-sm text-black_90 font-bold;
+  }
+}

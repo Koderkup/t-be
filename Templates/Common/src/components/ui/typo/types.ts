@@ -1,0 +1,15 @@
+export type VariantTypoComponent =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'p'
+  | 'span'
+  | 'div'
+  | 'label'
+  | 'code'
+  | 'small'
+  | 'em'
+  | 'b'
+  | 'i'
+  | 'strong';

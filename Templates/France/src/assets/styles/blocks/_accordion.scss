@@ -1,0 +1,35 @@
+.accordion {
+  @apply w-full border-t border-white mt-4 opacity-60;
+
+  &__wrapper {
+    @apply py-2.5 border-b border-white;
+  }
+
+  &__item {
+    @apply flex justify-between items-center cursor-pointer;
+  }
+
+  &__arrow {
+    @apply transition-all duration-300 fill-white;
+
+    &--active {
+      @apply rotate-180;
+    }
+  }
+
+  &__content {
+    @apply px-[25px] pb-0 overflow-hidden transition-all duration-500;
+
+    &--active {
+      @apply transition-all duration-500 pb-2.5;
+    }
+  }
+
+  &__body {
+    @apply py-2.5;
+  }
+
+  &__text {
+    @apply body-lg text-white;
+  }
+}

@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'pallete';
+@import 'fonts';
+@import 'typography';
+@import 'animations';
+@import 'select';
+@import 'select-app-currency';
+@import 'blocks/index';
+
+body {
+  font-family: 'Graphik', sans-serif;
+  background: var(--white);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-fixed {
+  overflow: hidden;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(24, 26, 28, 0.2);
+  border-radius: 6px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.icon-button {
+  @apply w-10 h-10 flex justify-center items-center;
+}

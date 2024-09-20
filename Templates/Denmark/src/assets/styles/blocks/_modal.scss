@@ -1,0 +1,63 @@
+.modal {
+  @apply fixed w-[calc(100%-32px)] max-h-[70vh] pt-8 px-4 left-1/2 top-1/2 z-[155] flex -translate-y-1/2 -translate-x-1/2 flex-col rounded-[20px] bg-white  #{!important};
+
+  &__heading {
+    @apply font-fourth flex items-center flex-col gap-2 mb-[15px];
+  }
+
+  &__icon {
+    @apply mb-1;
+  }
+
+  &__info {
+    @apply font-normal text-[36px] leading-[110%] text-center text-[#181a1c];
+  }
+
+  &__description {
+    @apply opacity-60 body-sm font-normal text-[#181a1c];
+  }
+
+  &__close {
+    @apply absolute right-4 top-4 flex h-6 w-6 items-center justify-center;
+  }
+
+  .stock-validation {
+    @apply overflow-auto h-full scrollbar border-t border-[rgba(24,26,28,0.2)];
+
+    &__item {
+      @apply py-4;
+    }
+  }
+
+  .bonuse {
+    @apply flex flex-col gap-y-3  pb-[20px] w-full;
+
+    &__wrapper {
+      @apply flex flex-col gap-y-1;
+    }
+
+    &__title {
+      @apply font-fourth text-[36px] text-[#181a1c] leading-[100%] font-normal py-2 text-center;
+    }
+
+    &__block {
+      @apply flex items-center justify-between;
+
+      &__text {
+        @apply font-bold text-[18px] leading-[150%] tracking-[0.06em] text-black_90;
+      }
+    }
+
+    &__form {
+      @apply flex flex-col gap-y-2;
+    }
+  }
+}
+
+.modal-backdrop {
+  @apply fixed inset-0 z-[150] bg-[rgba(20,20,20,0.4)];
+}
+
+.bonuse__button button {
+  @apply bg-black_90 rounded-[5px] text-white font-semibold text-[14px] leading-[200%] tracking-[0.11em] uppercase;
+}

@@ -1,0 +1,47 @@
+.order-details {
+  @apply px-4 mt-[10px];
+
+  &__number {
+    @apply font-normal pb-[10px] text-main_black headline-md;
+  }
+
+  .info {
+    @apply flex flex-col gap-2 mt-2;
+
+    &__row {
+      @apply font-medium font-primary body-lg text-black_60;
+    }
+
+    &__value {
+      @apply text-main_black pl-1;
+    }
+
+    &__wrapper {
+      @apply flex items-center gap-1;
+    }
+
+    &__status {
+      @apply font-medium font-primary text-black_60 body-lg;
+    }
+
+    &__items {
+      @apply mt-2 py-4;
+    }
+
+    &__total {
+      @apply border-t border-[rgba(24,26,28,0.2)] pt-2 flex flex-col gap-2;
+    }
+  }
+
+  .help-link {
+    @apply mt-6;
+
+    &__button {
+      @apply border border-solid border-black rounded-xl py-[14px] w-full;
+    }
+
+    &__text {
+      @apply font-semibold text-main_black caption;
+    }
+  }
+}

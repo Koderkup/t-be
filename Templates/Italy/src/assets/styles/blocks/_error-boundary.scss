@@ -1,0 +1,27 @@
+.error-boundary {
+  @apply flex flex-col items-center w-full h-screen;
+
+  &__wrapper {
+    @apply flex flex-col items-center justify-center max-w-[250px] flex-grow;
+  }
+
+  &__title {
+    @apply font-primary font-bold text-[32px] mt-3 normal-case leading-[125%] text-black text-center #{!important};
+  }
+
+  &__subtitle {
+    @apply font-inter  text-center font-normal text-black leading-[171%] tracking-[-0.01em] mt-[8px];
+  }
+
+  &__actions {
+    @apply relative w-full px-4 pt-2 bg-[rgb(255,255,255,0.75)] backdrop-blur-[20px];
+  }
+
+  &__button {
+    @apply font-medium font-primary text-[18px] tracking-[-0.01em] text-white;
+  }
+}
+
+.error-boundary__actions button {
+  @apply rounded-full bg-black py-4;
+}

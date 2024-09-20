@@ -1,0 +1,47 @@
+.order-details {
+  @apply px-4 mt-[10px];
+
+  &__number {
+    @apply title-text pb-[10px];
+  }
+
+  .info {
+    @apply flex flex-col gap-2 mt-2;
+
+    &__row {
+      @apply body-sm text-[#747677] font-normal;
+    }
+
+    &__value {
+      @apply body-sm text-[#181a1c] font-normal;
+    }
+
+    &__wrapper {
+      @apply flex items-center gap-1;
+    }
+
+    &__status {
+      @apply body-sm text-[#747677] font-normal;
+    }
+
+    &__items {
+      @apply mt-2 py-4 border-t border-b border-solid border-black_10;
+    }
+
+    &__total {
+      @apply pt-2 flex flex-col;
+    }
+  }
+
+  .help-link {
+    @apply mt-6;
+
+    &__button {
+      @apply border border-solid border-black_90 py-[12px] w-full;
+    }
+
+    &__text {
+      @apply font-semibold text-[14px] text-black_90 uppercase leading-[200%];
+    }
+  }
+}

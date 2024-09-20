@@ -1,0 +1,31 @@
+.input {
+  @apply px-4 py-3 rounded-[5px] bg-black_05 border border-solid outline-none body-sm text-black_90 placeholder:text-black_70;
+
+  &__default {
+    @apply border-black_30;
+  }
+
+  &__active {
+    @apply border-black_30;
+  }
+
+  &__error {
+    @apply bg-[rgba(255,59,48,0.05)] border-error;
+
+    &--text {
+      @apply body-sm text-error;
+    }
+  }
+
+  &__valid {
+    @apply bg-[#ebebeb] py-[7px] rounded-[5px] mt-2 w-fit flex items-center gap-[9px] px-[9px] h-[34px];
+  }
+
+  &__full {
+    @apply w-full;
+  }
+}
+
+.input__wrapper {
+  width: 100%;
+}

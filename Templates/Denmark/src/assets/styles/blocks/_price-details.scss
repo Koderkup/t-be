@@ -1,0 +1,23 @@
+.price-details {
+  @apply flex items-center py-2 justify-between;
+
+  &--is-total {
+    @apply py-4;
+  }
+
+  &__label {
+    @apply font-normal text-[18px] tracking-[0.06em] leading-[150%] text-black_70;
+
+    &--is-total {
+      @apply font-bold  text-[18px] tracking-[0.06em] leading-[150%] text-black_90;
+    }
+  }
+
+  &__price {
+    @apply font-normal text-[18px] tracking-[0.06em] leading-[150%] text-black_90;
+
+    &--is-total {
+      @apply font-bold  text-[18px] tracking-[0.06em] leading-[150%] text-black_90;
+    }
+  }
+}

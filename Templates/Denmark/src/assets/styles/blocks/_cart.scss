@@ -1,0 +1,93 @@
+.cart {
+  @apply flex flex-col h-full justify-between overflow-hidden;
+
+  &__wrapper {
+    @apply flex flex-col px-4 overflow-hidden;
+  }
+
+  &__title {
+    @apply block py-2.5 font-normal text-[18px] leading-[150%] tracking-[0.06em] text-[#181a1c];
+  }
+
+  &__items {
+    @apply overflow-auto max-h-[266px] h-full hide-scrollbar mt-3 flex flex-col gap-y-3;
+  }
+}
+
+.cart-item {
+  @apply flex gap-3;
+
+  &__left-side {
+    @apply w-[128px] h-[170px] flex-shrink-0;
+  }
+
+  &__image {
+    @apply w-full h-full object-cover object-top;
+  }
+
+  &__right-side {
+    @apply flex flex-col w-full gap-[9px];
+  }
+
+  &__name {
+    @apply body-sm font-normal text-black_90;
+  }
+
+  &__wrapper {
+    @apply flex flex-col gap-1;
+  }
+
+  &__information {
+    @apply flex flex-col;
+  }
+
+  &__inner {
+    @apply flex items-center gap-1.5;
+  }
+
+  &__sizeBlock {
+    @apply flex items-center justify-between h-[40px];
+  }
+
+  &__amountBlock {
+    @apply flex items-center justify-between;
+  }
+
+  &__info {
+    @apply flex items-center justify-center;
+
+    &--bordered {
+      @apply border;
+    }
+  }
+
+  &__size {
+    @apply body-sm font-normal text-black_90;
+  }
+
+  &__amount {
+    @apply body-sm font-normal text-black_90;
+  }
+
+  &__price {
+    &--text {
+      @apply body-sm font-bold text-black_90;
+    }
+  }
+
+  &__remove {
+    @apply py-1 w-fit;
+
+    &--text {
+      @apply body-sm font-bold text-black_90;
+    }
+  }
+}
+
+.user__bonuses {
+  @apply flex items-center justify-between mt-4;
+
+  &__button {
+    @apply w-fit border border-solid border-black_90 default-text text-black_90 rounded-[0px] px-[26px] py-2;
+  }
+}

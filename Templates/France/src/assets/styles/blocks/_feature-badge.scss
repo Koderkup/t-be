@@ -1,0 +1,7 @@
+.badge {
+  @apply absolute top-2 left-2 flex items-center gap-1 py-[7px] px-2 bg-main_black rounded-[45px];
+
+  &__text {
+    @apply text-[11px] leading-[11px] text-grey_20;
+  }
+}

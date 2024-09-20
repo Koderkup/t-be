@@ -1,0 +1,39 @@
+.accordion {
+  @apply w-full  mt-[48px];
+
+  &__wrapper {
+    @apply flex flex-col gap-y-[12px];
+  }
+
+  &__item {
+    @apply flex justify-between items-center cursor-pointer;
+  }
+
+  &__arrow {
+    @apply transition-all duration-300 w-[16px] h-[9px];
+
+    &--active {
+      @apply rotate-180;
+    }
+  }
+
+  &__content {
+    @apply px-[25px] pb-0 overflow-hidden transition-all duration-500;
+
+    &--active {
+      @apply transition-all duration-500 pb-2.5;
+    }
+  }
+
+  &__body {
+    @apply py-2;
+  }
+
+  &__text {
+    @apply font-primary text-[16px] font-medium leading-[150%] tracking-[-0.01em] text-white;
+  }
+}
+
+.accordion__arrow path {
+  stroke: white !important;
+}

@@ -1,0 +1,17 @@
+.controls {
+  &__tabs {
+    @apply flex w-full justify-end gap-3 mt-4;
+  }
+
+  &__item {
+    @apply p-4 bg-[#f1f5f9] rounded-[50%];
+  }
+
+  &__item-active {
+    @apply bg-[#000];
+  }
+}
+
+.controls__tabs .controls__item-active svg rect {
+  stroke: #fff;
+}
